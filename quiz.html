@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Quiz</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/quiz.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Our Love</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Memories</a></li>
+                <li><a href="quiz.html">Quiz Game</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Quiz Header -->
+    <header class="hero">
+        <h1>How well do you remember our journey?</h1>
+        <p>Answer these fun questions to see how much you remember about our relationship.</p>
+    </header>
+    
+    <!-- Quiz Container -->
+    <section class="quiz-section">
+        <div id="quiz-container" class="quiz-container">
+            <!-- Questions will be injected here by quiz.js -->
+        </div>
+        <button id="submit-btn" class="btn" onclick="submitQuiz()">Submit Quiz</button>
+        <div id="result" class="result"></div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Made with ❤️ for us.</p>
+    </footer>
+</body>
+</html>
