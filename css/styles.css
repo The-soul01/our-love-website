@@ -1,0 +1,231 @@
+/* styles.css: basic styling for the love story website */
+
+/* Reset some basic elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: #ffe6e6; /* soft pink background */
+    color: #333;
+    padding-top: 60px; /* space for fixed nav */
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ff4d6d; /* romantic red */
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0.5rem 1rem;
+}
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #ff99ac, #ffd1dc);
+    color: #2c003e;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Memories Section */
+.memories {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+.memories h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #b80044;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+.card {
+    perspective: 1000px;
+}
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-back {
+    background: #fff7f9;
+    color: #5c003b;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.card-back h3 {
+    margin-bottom: 0.5rem;
+}
+
+/* Music Section */
+.music-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+.music-section h2 {
+    color: #b80044;
+    margin-bottom: 0.5rem;
+}
+.music-section audio {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Video Section */
+.video-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    text-align: center;
+}
+.video-section h2 {
+    color: #b80044;
+    margin-bottom: 0.5rem;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Quiz Section */
+.quiz-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+.quiz-section h3 {
+    margin-bottom: 0.5rem;
+    color: #5c003b;
+}
+.quiz-question {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #fff7f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.option-label {
+    display: flex;
+    align-items: center;
+    margin: 0.3rem 0;
+    cursor: pointer;
+}
+.option-label input {
+    margin-right: 0.5rem;
+}
+.btn {
+    display: block;
+    margin: 1rem auto;
+    padding: 0.7rem 2rem;
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+.btn:hover {
+    background: #e63956;
+}
+.result {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #5c003b;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background: #ffccd5;
+    color: #5c003b;
+    margin-top: 3rem;
+}
