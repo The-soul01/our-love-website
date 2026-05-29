@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Message For You</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: url('images/page2_bg.png') no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c003e;
+        }
+        .message-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .message-box h1 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: #b80044;
+        }
+        .typewriter {
+            display: inline-block;
+            border-right: 2px solid #b80044;
+            animation: blink 0.7s steps(1) infinite;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+        @keyframes blink {
+            from { border-color: #b80044; }
+            to { border-color: transparent; }
+        }
+        .next-btn {
+            margin-top: 2rem;
+            padding: 0.5rem 1.2rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #b80044;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="message-box">
+        <h1>My Love,</h1>
+        <p id="message" class="typewriter"></p>
+        <button class="next-btn" style="display:none;" id="nextBtn" onclick="nextPage()">Next</button>
+    </div>
+    <script>
+        const text = `I wanted to take a moment to remind you just how much you mean to me.\n\nYou are my sunshine, my inspiration and my best friend. Every day with you is a treasure and I am so grateful for the moments we share together.\n\nI love you more than words can say.`;
+        const el = document.getElementById('message');
+        let index = 0;
+        function typeWriter() {
+            if (index < text.length) {
+                el.textContent += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 50);
+            } else {
+                document.getElementById('nextBtn').style.display = 'inline-block';
+            }
+        }
+        function nextPage() {
+            window.location.href = 'message2.html';
+        }
+        window.onload = typeWriter;
+    </script>
+    <!-- Background music for message pages -->
+    <audio autoplay loop style="display:none;">
+        <source src="audio/dekha_hi_nahi_instrumental.wav" type="audio/wav">
+    </audio>
+</body>
+</html>

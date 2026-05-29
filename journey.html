@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: url('images/page5_bg.png') no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c003e;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .journey-box {
+            background: rgba(255,255,255,0.85);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 700px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .journey-box h1 {
+            text-align: center;
+            color: #b80044;
+            margin-bottom: 1rem;
+        }
+        .timeline {
+            list-style: none;
+            position: relative;
+            padding-left: 1rem;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #b80044;
+        }
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '❤️';
+            position: absolute;
+            left: -3px;
+            top: 0;
+            transform: translateY(-4px);
+        }
+        .timeline-item h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #b80044;
+        }
+        .timeline-item p {
+            margin: 0.2rem 0 0.5rem 0;
+            font-size: 1rem;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .btn {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #b80044;
+            color: white;
+            cursor: pointer;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="journey-box">
+        <h1>Our Beautiful Journey</h1>
+        <ul class="timeline">
+            <li class="timeline-item">
+                <h3>When We Met</h3>
+                <p>The day our eyes met and our hearts connected. A moment I will never forget.</p>
+            </li>
+            <li class="timeline-item">
+                <h3>First Adventure</h3>
+                <p>Our first trip together where we laughed, explored and made unforgettable memories.</p>
+            </li>
+            <li class="timeline-item">
+                <h3>Growing Together</h3>
+                <p>Through everyday moments, we grew stronger, supported each other and built our own world.</p>
+            </li>
+        </ul>
+        <div class="button-container">
+            <button class="btn" onclick="window.location.href='message3.html'">Back</button>
+            <button class="btn" onclick="window.location.href='animated.html'">Next</button>
+        </div>
+    </div>
+        <!-- Background music for message pages -->
+        <audio autoplay loop style="display:none;">
+            <source src="audio/dekha_hi_nahi_instrumental.wav" type="audio/wav">
+        </audio>
+</body>
+</html>

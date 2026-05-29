@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reasons I Love You</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: url('images/page3_bg.png') no-repeat center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2c003e;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .reasons-box {
+            background: rgba(255,255,255,0.85);
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .reasons-box h1 {
+            color: #b80044;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .reason-item {
+            opacity: 0;
+            transform: translateX(-20px);
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+            animation: slideIn 0.6s forwards;
+        }
+        .reason-item:nth-child(1) { animation-delay: 0.2s; }
+        .reason-item:nth-child(2) { animation-delay: 0.8s; }
+        .reason-item:nth-child(3) { animation-delay: 1.4s; }
+        .reason-item:nth-child(4) { animation-delay: 2.0s; }
+        @keyframes slideIn {
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .next-btn, .back-btn {
+            margin-top: 2rem;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #b80044;
+            color: white;
+            cursor: pointer;
+        }
+        .button-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="reasons-box">
+        <h1>Reasons I Love You</h1>
+        <ul style="list-style-type:'❤️ ';"><!-- use heart bullets -->
+            <li class="reason-item">Your kind and compassionate heart.</li>
+            <li class="reason-item">The way you make me laugh and feel alive.</li>
+            <li class="reason-item">Your strength and resilience in every situation.</li>
+            <li class="reason-item">Your endless support and unwavering love.</li>
+        </ul>
+        <div class="button-container">
+            <button class="back-btn" onclick="goBack()">Back</button>
+            <button class="next-btn" onclick="goNext()">Next</button>
+        </div>
+    </div>
+    <script>
+        function goBack() {
+            window.location.href = 'message1.html';
+        }
+        function goNext() {
+            window.location.href = 'message3.html';
+        }
+    </script>
+    <!-- Background music for message pages -->
+    <audio autoplay loop style="display:none;">
+        <source src="audio/dekha_hi_nahi_instrumental.wav" type="audio/wav">
+    </audio>
+</body>
+</html>

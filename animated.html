@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Love</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            background: linear-gradient(180deg, #ff99ac, #ffd1dc);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #2c003e;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 1rem;
+            font-size: 2.2rem;
+            color: #b80044;
+            z-index: 2;
+        }
+        p.subtitle {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            color: #5c003b;
+            z-index: 2;
+        }
+        /* Floating hearts similar to hearts.html */
+        .hearts-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff4d6d;
+            transform: rotate(45deg);
+            animation: float 8s linear infinite;
+        }
+        .heart::before, .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #ff4d6d;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+        .heart::after {
+            left: -10px;
+            top: 0;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(45deg);
+                opacity: 0;
+            }
+        }
+        .button-container {
+            z-index: 2;
+            margin-top: 2rem;
+        }
+        .btn {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #b80044;
+            color: white;
+            cursor: pointer;
+            margin: 0 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Animated Love</h1>
+    <p class="subtitle">Our love blossoms with floating hearts and gentle music.</p>
+    <div class="hearts-container" id="animatedHearts"></div>
+    <div class="button-container">
+        <button class="btn" onclick="window.location.href='journey.html'">Back</button>
+        <button class="btn" onclick="window.location.href='memories.html'">Memories</button>
+        <button class="btn" onclick="window.location.href='quiz.html'">Quiz</button>
+    </div>
+    <!-- Background music using our instrumental track -->
+    <audio autoplay loop style="display:none;">
+        <source src="audio/dekha_hi_nahi_instrumental.wav" type="audio/wav">
+    </audio>
+    <script>
+        // Create floating hearts dynamically (similar to hearts.html but independent)
+        const container = document.getElementById('animatedHearts');
+        const numHearts = 25;
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = 6 + Math.random() * 4 + 's';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            container.appendChild(heart);
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+        for (let i = 0; i < numHearts; i++) {
+            setTimeout(createHeart, i * 300);
+        }
+        // Continuously generate hearts
+        setInterval(createHeart, 800);
+    </script>
+</body>
+</html>
